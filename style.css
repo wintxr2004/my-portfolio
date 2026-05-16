@@ -232,13 +232,27 @@ nav .active::after{
 /* --- PAGE SECTION --- */
 .page-section{
   padding:150px 8%;
+  position:relative;
 }
 
 .page-section h1{
   font-size:60px;
-  margin-bottom:60px;
+  margin-bottom:70px;
   color:#d10038;
   text-align:center;
+  position:relative;
+}
+
+.page-section h1::after{
+  content:"";
+  width:120px;
+  height:4px;
+  background:linear-gradient(to right,#800020,#d10038);
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:-18px;
+  border-radius:10px;
 }
 
 /* --- ABOUT --- */
@@ -364,85 +378,131 @@ nav .active::after{
   color:#d10038;
 }
 
-/* --- CERTIFICATES --- */
+/* ========================================= */
+/* =========== CERTIFICATES ================ */
+/* ========================================= */
+
 .certificate-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
   gap:35px;
-  align-items:start;
+  align-items:stretch;
 }
 
 .certificate-card{
-  background:#151515;
-  border-radius:24px;
+  background:linear-gradient(
+    180deg,
+    rgba(25,25,25,0.98),
+    rgba(16,16,16,0.98)
+  );
+
+  border-radius:28px;
   overflow:hidden;
+
   border:1px solid rgba(128,0,32,0.25);
 
   display:flex;
   flex-direction:column;
 
-  transition:0.35s;
   position:relative;
 
-  height:100%;
+  transition:
+  transform 0.4s ease,
+  box-shadow 0.4s ease,
+  border-color 0.4s ease;
+
+  backdrop-filter:blur(12px);
+}
+
+/* Glow Effect */
+.certificate-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    135deg,
+    rgba(209,0,56,0.12),
+    transparent 40%,
+    transparent 60%,
+    rgba(128,0,32,0.12)
+  );
+  opacity:0;
+  transition:0.4s;
+  pointer-events:none;
+}
+
+.certificate-card:hover::before{
+  opacity:1;
 }
 
 .certificate-card:hover{
-  transform:translateY(-10px);
+  transform:translateY(-12px);
 
-  border-color:#800020;
+  border-color:#d10038;
 
   box-shadow:
-  0 0 30px rgba(128,0,32,0.25);
+  0 0 25px rgba(128,0,32,0.25),
+  0 0 60px rgba(128,0,32,0.18);
 }
 
-/* --- FIX CERTIFICATE IMAGE --- */
+/* --- CERTIFICATE IMAGE --- */
 .certificate-card img{
   width:100%;
   height:250px;
 
-  display:block;
-
   object-fit:cover;
   object-position:top center;
 
+  display:block;
+
   background:#111;
 
-  transition:0.4s;
+  transition:
+  transform 0.5s ease,
+  filter 0.5s ease;
 }
 
 .certificate-card:hover img{
-  transform:scale(1.03);
+  transform:scale(1.05);
+  filter:brightness(1.08);
 }
 
+/* --- CONTENT --- */
 .certificate-content{
-  padding:28px;
+  padding:30px;
   display:flex;
   flex-direction:column;
   flex:1;
 }
 
 .certificate-content h2{
-  color:#d10038;
-  margin-bottom:15px;
-  font-size:22px;
+  color:#ff1f5a;
+  font-size:23px;
   line-height:1.5;
+  margin-bottom:18px;
+  font-weight:700;
 }
 
 .certificate-content p{
-  color:#d1d5db;
+  color:#c7cbd1;
   line-height:1.9;
-  margin-bottom:20px;
+  margin-bottom:25px;
   flex:1;
   font-size:15px;
 }
 
+/* --- DATE --- */
 .certificate-content span{
   color:#9ca3af;
   font-size:14px;
 
+  padding-top:18px;
+
   border-top:1px solid rgba(255,255,255,0.08);
-  padding-top:15px;
+
+  display:flex;
+  align-items:center;
+  gap:8px;
 }
 
 /* --- FOOTER --- */
@@ -455,7 +515,10 @@ footer{
   background:#111;
 }
 
-/* --- RESPONSIVE --- */
+/* ========================================= */
+/* ============== RESPONSIVE =============== */
+/* ========================================= */
+
 @media(max-width:900px){
 
   header{
@@ -519,7 +582,11 @@ footer{
 
   .certificate-grid{
     grid-template-columns:1fr;
-    gap:25px;
+    gap:28px;
+  }
+
+  .certificate-card{
+    border-radius:24px;
   }
 
   .certificate-card img{
@@ -527,7 +594,7 @@ footer{
   }
 
   .certificate-content{
-    padding:22px;
+    padding:24px;
   }
 
   .certificate-content h2{
@@ -536,5 +603,6 @@ footer{
 
   .certificate-content p{
     font-size:14px;
+    line-height:1.8;
   }
 }
