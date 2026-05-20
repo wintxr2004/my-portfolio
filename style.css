@@ -83,7 +83,59 @@ header{
 
   text-shadow:0 0 20px rgba(255,0,85,0.4);
 }
+/* =========================
+   JOB TITLE
+========================= */
 
+.job-container{
+  margin-top:30px;
+
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+/* HEADING */
+
+.job-heading{
+  font-size:1rem;
+  font-weight:600;
+  color:#ff4d88;
+  letter-spacing:1px;
+}
+
+/* ROW */
+
+.job-row{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+/* TAG */
+
+.job-title{
+  font-size:0.85rem;
+  font-weight:500;
+  letter-spacing:0.5px;
+
+  color:#ffffffcc;
+
+  padding:8px 16px;
+
+  border:1px solid #ff004c50;
+  border-radius:30px;
+
+  background:#111;
+
+  transition:0.3s;
+}
+
+.job-title:hover{
+  color:#ff4d88;
+  border-color:#ff004c;
+  transform:translateY(-3px);
+}
 /* ==================================================
    NAVBAR
 ================================================== */
