@@ -416,6 +416,13 @@ nav .active::after{
   gap:40px;
 }
 
+/* ทำให้กดได้ทั้งการ์ด */
+.project-link{
+  text-decoration:none;
+  color:inherit;
+  display:block;
+}
+
 .project-card{
   display:flex;
   align-items:center;
