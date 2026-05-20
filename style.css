@@ -321,12 +321,6 @@ nav .active::after{
 /* ==================================================
    BUTTONS
 ================================================== */
-.hero-buttons{
-  margin-top:40px;
-  display:flex;
-  gap:15px;
-}
-
 .btn{
   display:inline-block;
   padding:14px 32px;
@@ -413,7 +407,7 @@ nav .active::after{
   width:100%;
   max-width:820px;
   height:420px;
-  margin:0 auto 30px; /* ลดขอบล่างให้ข้อความขยับขึ้นไปชิดใต้ภาพพอดี */
+  margin:0 auto 30px; 
   border-radius:35px;
   overflow:hidden;
   position:relative;
@@ -471,7 +465,7 @@ nav .active::after{
 #radio2:checked ~ .first{ margin-left:-14.285%; }
 #radio3:checked ~ .first{ margin-left:-28.57%; }
 #radio4:checked ~ .first{ margin-left:-42.855%; }
-#radio5:checked ~ .first{ margin-left:-57.14%; }
+#radio5:checked ~ .first{ margin-left:-57.14%; } /* แก้ไขจุดพิมพ์ผิดเอาเครื่องหมายเซมิโคลอนส่วนเกินออกแล้ว */
 #radio6:checked ~ .first{ margin-left:-71.425%; }
 #radio7:checked ~ .first{ margin-left:-85.71%; }
 
@@ -502,12 +496,12 @@ nav .active::after{
 }
 
 /* ==================================================
-   จุดแก้ไข: ปรับช่องไฟกลุ่มข้อความให้ขยับขึ้นและห่างจากกล่องล่างพอดี
+   ABOUT LEAD TEXT
 ================================================== */
 .about-lead-text {
-  max-width: 820px;         /* ปรับความกว้างให้เท่ากับขนาดของตัว Slider */
-  margin: 0 auto 50px;      /* ด้านล่างเว้นช่องไฟห่างจากกรอบกล่องสีแดง 50px */
-  text-align: left;         /* จัดตัวอักษรชิดซ้ายเรียงสวยงาม */
+  max-width: 820px;         
+  margin: 0 auto 50px;      
+  text-align: left;         
   padding: 0 5px;
 }
 
@@ -515,29 +509,29 @@ nav .active::after{
   color: #9ca3af;
   line-height: 1.8;
   font-size: 16px;
-  margin-bottom: 8px;       /* ลดช่องไฟระหว่างบรรทัดข้อความทั้ง 3 ข้อความ */
+  margin-bottom: 8px;       
 }
 
 .about-lead-text p:last-child {
-  margin-bottom: 0;         /* ตัวสุดท้ายไม่ต้องมีระยะเว้น */
+  margin-bottom: 0;         
 }
 
 /* ==================================================
-   ABOUT GRID (กล่องข้อความกรอบแดง)
+   ABOUT GRID 
 ================================================== */
 .about-grid {
-  max-width: 820px;         /* ขนาดกว้างเท่ากับสไลเดอร์และกลุ่มข้อความ */
+  max-width: 820px;         
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr; /* เรียงกล่องลงมาเป็นแนวตั้งตามรูปภาพ */
-  gap: 30px;                /* ช่องไฟระหว่างกล่อง Education / Experience */
+  grid-template-columns: 1fr; 
+  gap: 30px;                
 }
 
 .about-box {
   background: rgba(21, 21, 21, 0.6); 
   padding: 35px 40px; 
   border-radius: 20px;
-  border: 1px solid rgba(255, 0, 60, 0.15); /* กรอบสีแดงจางๆ ตามรูป */
+  border: 1px solid rgba(255, 0, 60, 0.15); 
   transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -552,7 +546,7 @@ nav .active::after{
 
 .about-box h2 {
   font-size: 28px; 
-  color: #ffffff;           /* เปลี่ยนหัวข้อเป็นสีขาวเด่นแบบในรูปใบงาน */
+  color: #ffffff;           
   margin-bottom: 15px;
   font-weight: 700;
 }
@@ -671,9 +665,44 @@ nav .active::after{
   color:#d1d5db;
 }
 
+.contact-container {
+  max-width: 900px;
+  margin: auto;
+  position: relative;
+}
+
+.btn-download-pdf {
+  position: absolute;
+  top: -45px;                 
+  right: 10px;                
+  background: linear-gradient(135deg, #ff003c, #b3002d);
+  color: white;
+  text-decoration: none;
+  padding: 10px 22px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 23, 68, 0.4);
+  box-shadow: 0 4px 15px rgba(255, 0, 60, 0.25);
+  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+}
+
+.btn-download-pdf:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 0, 60, 0.45);
+  border-color: #ff1744;
+}
+
+.pdf-icon {
+  font-size: 16px;
+}
+
 .contact-box{
-  max-width:900px;
-  margin:auto;
+  width: 100%;
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:25px;
@@ -939,6 +968,21 @@ footer{
     text-align:center;
   }
 
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .btn-download-pdf {
+    position: static;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+
   .contact-box{
     grid-template-columns:1fr;
     padding:20px;
@@ -959,6 +1003,7 @@ footer{
 
   .page-section h1{
     font-size:38px;
+    margin-bottom: 25px; 
   }
 
   footer{
