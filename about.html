@@ -4,15 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About</title>
-
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-
   <div class="logo">PEERAWIT</div>
-
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html" class="active">About</a>
@@ -21,21 +18,14 @@
     <a href="certificates.html">Certificates</a>
     <a href="contact.html">Contact</a>
   </nav>
-
 </header>
 
 <section class="page-section">
 
   <h1>About Me</h1>
 
-  <!-- ==================================================
-       IMAGE SLIDER
-  ================================================== -->
   <div class="slider">
-
     <div class="slides">
-
-      <!-- Radio Buttons -->
       <input type="radio" name="radio-btn" id="radio1" checked>
       <input type="radio" name="radio-btn" id="radio2">
       <input type="radio" name="radio-btn" id="radio3">
@@ -44,44 +34,29 @@
       <input type="radio" name="radio-btn" id="radio6">
       <input type="radio" name="radio-btn" id="radio7">
 
-      <!-- Slide 1 -->
       <div class="slide first">
         <img src="https://drive.google.com/thumbnail?id=1Mjb2KYwz-vkJuhgOzDr9dsxObeXfrVHk&sz=w2000">
       </div>
-
-      <!-- Slide 2 -->
       <div class="slide">
         <img src="https://drive.google.com/thumbnail?id=1yuPUTcrDL7qQzr7XexKiHcEEiXSN0DYt&sz=w2000">
       </div>
-
-      <!-- Slide 3 -->
       <div class="slide">
         <img src="https://drive.google.com/thumbnail?id=1pejrlJWygtp1lr1ZnNjGoKABXas7gCrw&sz=w2000">
       </div>
-
-      <!-- Slide 4 -->
       <div class="slide">
         <img src="https://drive.google.com/thumbnail?id=15ghjlfWiTeZHTR0L35bioLNiREfTMQXF&sz=w2000">
       </div>
-
-      <!-- Slide 5 -->
       <div class="slide">
         <img src="https://drive.google.com/thumbnail?id=1Yu8AYzdkEupUQJYQDLXInQ30TpaWkNsF&sz=w2000">
       </div>
-
-      <!-- Slide 6 -->
       <div class="slide">
         <img src="https://drive.google.com/thumbnail?id=1We-aAACw9G_6lWVRawFZDaEqGJzVA-U1&sz=w2000">
       </div>
-
-      <!-- Slide 7 -->
       <div class="slide">
         <img src="https://drive.google.com/thumbnail?id=1dbacMERpA9yGsPHxaBUwoKvbbD_0uOTy&sz=w2000">
       </div>
 
-      <!-- Navigation Dots -->
       <div class="navigation-manual">
-
         <label for="radio1" class="manual-btn"></label>
         <label for="radio2" class="manual-btn"></label>
         <label for="radio3" class="manual-btn"></label>
@@ -89,73 +64,43 @@
         <label for="radio5" class="manual-btn"></label>
         <label for="radio6" class="manual-btn"></label>
         <label for="radio7" class="manual-btn"></label>
-
       </div>
-
     </div>
-
   </div>
 
-  <p>
-    I am a fourth-year Computer Engineering student
-    at Lampang Rajabhat University.
-  </p>
-
-  <p>
-    My interests include software development,
-    networking systems, cybersecurity,
-    and modern web technologies.
-  </p>
-
-  <p>
-    I enjoy building applications that solve
-    real-world problems and improve user experience.
-  </p>
+  <div class="about-lead-text">
+    <p>I am a fourth-year Computer Engineering student at Lampang Rajabhat University.</p>
+    <p>My interests include software development, networking systems, cybersecurity, and modern web technologies.</p>
+    <p>I enjoy building applications that solve real-world problems and improve user experience.</p>
+  </div>
 
   <div class="about-grid">
 
     <div class="about-box">
-
       <h2>Education</h2>
-
-      <p>
-        Bachelor of Computer Engineering
-      </p>
-
-      <p>
-        Lampang Rajabhat University
-      </p>
-
-      <p>
-        2022 - Present
-      </p>
-
+      <p>Bachelor of Computer Engineering</p>
+      <p>Lampang Rajabhat University</p>
+      <p>2022 - Present</p>
     </div>
 
     <div class="about-box">
-
       <h2>Experience</h2>
-
       <ul>
         <li>Web Development Projects</li>
         <li>Unity Game Systems</li>
         <li>Network Design Labs</li>
         <li>Database Management</li>
       </ul>
-
     </div>
 
     <div class="about-box">
-
       <h2>Interests</h2>
-
       <ul>
         <li>Frontend Development</li>
         <li>Backend Systems</li>
         <li>UI/UX Design</li>
         <li>Cybersecurity</li>
       </ul>
-
     </div>
 
   </div>
@@ -167,21 +112,14 @@
 </footer>
 
 <script>
-
 let counter = 1;
-
 setInterval(function(){
-
   document.getElementById('radio' + counter).checked = true;
-
   counter++;
-
   if(counter > 7){
     counter = 1;
   }
-
 }, 3500);
-
 </script>
 
 </body>
