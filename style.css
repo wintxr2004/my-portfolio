@@ -345,6 +345,113 @@ nav .active::after{
 }
 
 /* ==================================================
+   IMAGE SLIDER
+================================================== */
+.slider{
+  width:100%;
+  max-width:1100px;
+  height:550px;
+
+  margin:0 auto 60px;
+
+  border-radius:30px;
+  overflow:hidden;
+
+  position:relative;
+
+  border:1px solid rgba(255,0,60,0.25);
+
+  box-shadow:
+  0 0 40px rgba(255,0,85,0.12);
+}
+
+.slides{
+  width:700%;
+  height:100%;
+  display:flex;
+}
+
+.slides input{
+  display:none;
+}
+
+.slide{
+  width:14.285%;
+  transition:1s;
+}
+
+.slide img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* ==================================================
+   SLIDE MOVE
+================================================== */
+#radio1:checked ~ .first{
+  margin-left:0;
+}
+
+#radio2:checked ~ .first{
+  margin-left:-14.285%;
+}
+
+#radio3:checked ~ .first{
+  margin-left:-28.57%;
+}
+
+#radio4:checked ~ .first{
+  margin-left:-42.855%;
+}
+
+#radio5:checked ~ .first{
+  margin-left:-57.14%;
+}
+
+#radio6:checked ~ .first{
+  margin-left:-71.425%;
+}
+
+#radio7:checked ~ .first{
+  margin-left:-85.71%;
+}
+
+/* ==================================================
+   DOT NAVIGATION
+================================================== */
+.navigation-manual{
+  position:absolute;
+  width:100%;
+  bottom:25px;
+
+  display:flex;
+  justify-content:center;
+  gap:12px;
+}
+
+.manual-btn{
+  border:2px solid #ff1744;
+  padding:7px;
+  border-radius:50%;
+  cursor:pointer;
+  transition:0.3s;
+
+  background:rgba(255,255,255,0.15);
+
+  backdrop-filter:blur(10px);
+}
+
+.manual-btn:hover{
+  background:#ff1744;
+
+  transform:scale(1.15);
+
+  box-shadow:
+  0 0 15px rgba(255,0,85,0.5);
+}
+
+/* ==================================================
    ABOUT
 ================================================== */
 .about-grid{
@@ -416,7 +523,6 @@ nav .active::after{
   gap:40px;
 }
 
-/* ทำให้กดได้ทั้งการ์ด */
 .project-link{
   text-decoration:none;
   color:inherit;
@@ -731,6 +837,16 @@ footer{
   .skills-grid,
   .certificate-grid{
     grid-template-columns:1fr;
+  }
+
+  .slider{
+    height:260px;
+    border-radius:22px;
+    margin-bottom:40px;
+  }
+
+  .manual-btn{
+    padding:5px;
   }
 
   .project-card{
